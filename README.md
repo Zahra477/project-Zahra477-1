@@ -1,15 +1,30 @@
-# Your Project Name
+Système de Parking Intelligent avec Arduino
 
 | | |
 |-|-|
-|`Author` | Your full name
+|`Author` | Marmouche Fatma Ezzahra
 
 ## Description
+Ce projet consiste à réaliser un système intelligent de détection de place de parking en utilisant une carte Arduino Uno et un capteur à ultrasons HC-SR04.
+
+Le capteur mesure la distance entre lui et un obstacle (voiture). Lorsqu’un véhicule est détecté dans la zone de stationnement, le système indique que la place est occupée en allumant une LED rouge. Si aucun véhicule n’est détecté, la place est considérée libre, et une LED verte s’allume.
 
 ## Motivation
+Le stationnement est un problème en ville, car les conducteurs perdent du temps à chercher une place. Ce projet vise à simplifier la gestion des parkings et à réduire ce temps. Il permet aussi d’utiliser Arduino, des capteurs et de comprendre un système embarqué simple.
 
 ## Architecture
+Le système de parking intelligent est basé sur trois parties principales :
 
+1. Partie détection (Entrée)
+Capteur ultrason HC-SR04
+Il mesure la distance pour détecter si une voiture est présente ou non
+2. Partie traitement (Cerveau du système)
+Carte Arduino UNO
+Elle reçoit les données du capteur
+Elle analyse la distance et prend une décision
+3. Partie affichage (Sortie)
+LED verte → place libre
+LED rouge → place occupée
 ### Block diagram
 
 <!-- Make sure the path to the picture is correct -->
@@ -22,30 +37,30 @@
 ### Components
 
 
-<!-- This is just an example, fill in with your actual components -->
+| Device                    | Usage                           | Price   |
+| ------------------------- | ------------------------------- | ------- |
+| Arduino UNO               | Microcontrôleur principal       | ~70 RON |
+| HC-SR04 Ultrasonic Sensor | Détection de voiture (distance) | ~15 RON |
+| LED Verte                 | Indique place libre             | ~1 RON  |
+| LED Rouge                 | Indique place occupée           | ~1 RON  |
+| Résistances (220Ω)        | Protection des LEDs             | ~1 RON  |
+| Breadboard                | Montage du circuit              | ~10 RON |
+| Jumper Wires              | Connexions entre composants     | ~7 RON  |
 
-| Device | Usage | Price |
-|--------|--------|-------|
-| Activ Buzzer | Buzzer | [1.5 RON](https://www.optimusdigital.ro/ro/audio-buzzere/635-buzzer-activ-de-3-v.html?search_query=buzzer&results=61) |
-| Push Button | Button | [1 RON](https://www.optimusdigital.ro/ro/butoane-i-comutatoare/1119-buton-6x6x6.html?search_query=buton&results=222) |
-| Jumper Wires | Connecting components | [7 RON](https://www.optimusdigital.ro/ro/fire-fire-mufate/884-set-fire-tata-tata-40p-10-cm.html?search_query=set+fire&results=110) |
-| Breadboard | Project board | [10 RON](https://www.optimusdigital.ro/ro/prototipare-breadboard-uri/8-breadboard-830-points.html?search_query=breadboard&results=145) |
 
 ### Libraries
-
-<!-- This is just an example, fill in the table with your actual components -->
-
-| Library | Description | Usage |
-|---------|-------------|-------|
-| [lib-name1](link-to-lib) | official description of the lib | Used for accesing the peripherals of the microcontroller  |
-| [lib-name2](link-to-lib) | official description of the lib | Used for accesing the peripherals of the microcontroller  |
+| Library                 | Description                                | Usage                                |
+| ----------------------- | ------------------------------------------ | ------------------------------------ |
+| Wire.h (https://docs.arduino.cc/language-reference/en/functions/communication/wire/)| Bibliothèque Arduino standard              | Communication bas niveau             |
+| Arduino.h ( https://docs.arduino.cc/language-reference/ | Bibliothèque principale Arduino) | Contrôle des pins, digitalRead/Write |
+| NewPing.h(https://bitbucket.org/teckel12/arduino-new-ping/wiki/Home)| Simplifie l’utilisation du capteur HC-SR04 | Mesure de distance plus facile       |
 
 ## Log
 
 <!-- write every week your progress here -->
 
 ### Week 6 - 12 May
-
+Choix du projet et définition du système de parking intelligent. Étude du fonctionnement du capteur ultrason HC-SR04 et de la carte Arduino UNO.
 ### Week 7 - 19 May
 
 ### Week 20 - 26 May
