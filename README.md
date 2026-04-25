@@ -33,11 +33,11 @@ LED rouge → place occupée
 ### Block diagram
 
 <!-- Make sure the path to the picture is correct -->
-![Block Diagram](schematics/block_diagram.png)
+schematicsblock_diagram.png.jpeg
 
 ### Schematic
 
-![Schematic](schematics/kicad_schematic.png)
+schematicskicad_schematic.png.jpeg
 
 ### Components
 
