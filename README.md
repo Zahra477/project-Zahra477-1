@@ -1,5 +1,4 @@
-# Your Project Name
-Système de Parking Intelligent avec Arduino
+# Système de Parking Intelligent avec Arduino
 | | |
 |-|-|
 |`Author` |Marmouche Fatma Ezzahra
