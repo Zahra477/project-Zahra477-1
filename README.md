@@ -1,33 +1,40 @@
-# Système de Parking Intelligent avec Arduino
+# Smartwatch avec Arduino
 | | |
 |-|-|
 |`Author` |Marmouche Fatma Ezzahra
 
 ## Description
-Ce projet consiste à réaliser un système intelligent de détection de place de parking en utilisant une carte Arduino Uno et un capteur à ultrasons HC-SR04.
-Le capteur mesure la distance entre lui et un obstacle (voiture). Lorsqu’un véhicule est détecté dans la zone de stationnement, le système indique que la place est occupée en allumant une LED rouge. Si aucun véhicule n’est détecté, la place est considérée libre, et une LED verte s’allume.
+Ce projet consiste à concevoir un système simple de montre connectée (smartwatch) à l’aide d’un microcontrôleur Arduino Nano. La smartwatch est capable d’afficher des informations sur un écran OLED, de surveiller la fréquence cardiaque à l’aide d’un capteur de pouls, et de détecter les mouvements grâce à un capteur accéléromètre (MPU6050)
+Le système fonctionne de manière autonome grâce à une batterie rechargeable et démontre l’intégration de plusieurs capteurs dans un système embarqué.
 
 ## Motivation
-Le stationnement est un problème fréquent dans les zones urbaines. Les conducteurs perdent du temps à chercher une place libre. Ce projet a été choisi pour :
-simplifier la gestion des places de parking
-réduire le temps de recherche d’une place
-appliquer les connaissances en microprocesseurs
-apprendre l’utilisation des capteurs avec Arduino
-concevoir un système embarqué simple et utile
-Ce projet permet également de comprendre la communication entre capteurs, microcontrôleur et actionneurs.
+Les objets connectés et les systèmes de suivi de santé intelligents deviennent de plus en plus importants dans la technologie moderne. Ce projet a été choisi pour :
+appliquer les concepts de microprocesseurs et de systèmes embarqués
+apprendre à interfacer plusieurs capteurs avec Arduino
+comprendre les protocoles de communication tels que I2C
+créer un système électronique portable et autonome
+afficher des informations en temps réel sur un écran OLED
+explorer les technologies de suivi de santé et de mouvement
+Ce projet permet également de développer des compétences pratiques en électronique, programmation et intégration de capteurs.
 
 ## Architecture
-Le système de parking intelligent est basé sur trois parties principales :
- 1. Partie détection (Entrée)
-Capteur ultrason HC-SR04
-Il mesure la distance pour détecter si une voiture est présente ou non
-2. Partie traitement (Cerveau du système)
-Carte Arduino UNO
-Elle reçoit les données du capteur
-Elle analyse la distance et prend une décision
-3. Partie affichage (Sortie)
-LED verte → place libre
-LED rouge → place occupée
+Le système de smartwatch est divisé en quatre parties principales :
+
+1. Entrées / Capteurs
+
+Capteur de pouls (Pulse Sensor)
+Mesure la fréquence cardiaque de l’utilisateur.
+Accéléromètre MPU6050
+Détecte le mouvement et l’accélération.
+2. Unité de traitement
+Arduino Nano
+Reçoit les données des capteurs, traite les informations et contrôle l’affichage.
+3. Sortie / Affichage
+Écran OLED SSD1306
+Affiche la fréquence cardiaque et les données de mouvement en temps réel.
+4. Alimentation
+Batterie Li-Po + Module TP4056
+Fournit une alimentation portable et permet la recharge de la batterie.
 
 ### Block diagram
 
@@ -43,24 +50,26 @@ schematicskicad_schematic.png.jpeg
 
 <!-- This is just an example, fill in with your actual components -->
 
-| Device                    | Usage                           | Price   |
-| ------------------------- | ------------------------------- | ------- |
-| Arduino UNO               | Microcontrôleur principal       | ~70 RON |
-| HC-SR04 Ultrasonic Sensor | Détection de voiture (distance) | ~15 RON |
-| LED Verte                 | Indique place libre             | ~1 RON  |
-| LED Rouge                 | Indique place occupée           | ~1 RON  |
-| Résistances (220Ω)        | Protection des LEDs             | ~1 RON  |
-| Breadboard                | Montage du circuit              | ~10 RON |
-| Jumper Wires              | Connexions entre composants     | ~7 RON  |
+| device            | usage                            | Prix    |
+| ----------------- | -------------------------------- | ------- |
+| Arduino Nano      | Microcontrôleur principal        | ~60 RON |
+| OLED SSD1306      | Affichage des informations       | ~25 RON |
+| MPU6050           | Détection de mouvement           | ~20 RON |
+| Capteur de pouls  | Surveillance du rythme cardiaque | ~25 RON |
+| Batterie Li-Po    | Alimentation portable            | ~30 RON |
+| Module TP4056     | Charge de la batterie            | ~10 RON |
+| Breadboard        | Prototypage du circuit           | ~10 RON |
+| Fils de connexion | Connexions                       | ~7 RON  |
 
 
 ### Libraries
 
-| Library                                                                              | Description                                         | Usage                                         |
-| ------------------------------------------------------------------------------------ | --------------------------------------------------- | --------------------------------------------- |
-| [Wire.h](https://www.arduino.cc/reference/en/language/functions/communication/wire/) | Bibliothèque Arduino standard                       | Communication bas niveau (I2C)                |
-| [Arduino.h](https://www.arduino.cc/reference/en/)                                    | Bibliothèque principale Arduino                     | Contrôle des pins, digitalRead / digitalWrite |
-| [NewPing.h](https://bitbucket.org/teckel12/arduino-new-ping/wiki/Home)               | Simplifie l’utilisation du capteur ultrason HC-SR04 | Mesure de distance plus facile et optimisée   |
+| library            | Usage                     | descripition                        |
+| ------------------ | ------------------------- | ---------------------------------- |
+| [Wire.h  ](https://www.arduino.cc/reference/en/language/functions/communication/wire/)           | Communication I2C Ar[duino | Communication avec OLED et MPU6050 |
+| Adafruit_GFX.h  ](https://github.com/adafruit/Adafruit-GFX-Library)    | Bibliothèque graphique    | Texte et graphiques sur écran      |
+| [Adafruit_SSD1306.h](https://github.com/adafruit/Adafruit_SSD1306) | Contrôle OLED             | Gestion de l’écran OLED            |
+| [MPU6050.h](https://github.com/adafruit/Adafruit_MPU6050)          | Capteur MPU6050           | Détection de mouvement             |
 
 
 ## Log
