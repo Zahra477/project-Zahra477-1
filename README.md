@@ -1,40 +1,30 @@
-# Smartwatch avec Arduino
+# Ventilateur avec Arduino
 | | |
 |-|-|
 |`Author` |Marmouche Fatma Ezzahra
 
 ## Description
-Ce projet consiste à concevoir un système simple de montre connectée (smartwatch) à l’aide d’un microcontrôleur Arduino Nano. La smartwatch est capable d’afficher des informations sur un écran OLED, de surveiller la fréquence cardiaque à l’aide d’un capteur de pouls, et de détecter les mouvements grâce à un capteur accéléromètre (MPU6050)
-Le système fonctionne de manière autonome grâce à une batterie rechargeable et démontre l’intégration de plusieurs capteurs dans un système embarqué.
+Ce projet consiste à réaliser un ventilateur simple contrôlé par une carte Arduino. Le système utilise un moteur DC relié à une hélice qui tourne automatiquement lorsque le circuit est alimenté. Ce projet permet de comprendre le fonctionnement de base d’un moteur avec Arduino ainsi que les connexions électroniques simples.
 
 ## Motivation
-Les objets connectés et les systèmes de suivi de santé intelligents deviennent de plus en plus importants dans la technologie moderne. Ce projet a été choisi pour :
-appliquer les concepts de microprocesseurs et de systèmes embarqués
-apprendre à interfacer plusieurs capteurs avec Arduino
-comprendre les protocoles de communication tels que I2C
-créer un système électronique portable et autonome
-afficher des informations en temps réel sur un écran OLED
-explorer les technologies de suivi de santé et de mouvement
-Ce projet permet également de développer des compétences pratiques en électronique, programmation et intégration de capteurs.
+Ce projet a été choisi pour :
+apprendre les bases de l’électronique avec Arduino
+comprendre le fonctionnement d’un moteur DC
+réaliser un circuit simple et fonctionnel
+développer des compétences pratiques en programmation et câblage électronique
+découvrir les systèmes embarqués de base
 
 ## Architecture
-Le système de smartwatch est divisé en quatre parties principales :
-
-1. Entrées / Capteurs
-
-Capteur de pouls (Pulse Sensor)
-Mesure la fréquence cardiaque de l’utilisateur.
-Accéléromètre MPU6050
-Détecte le mouvement et l’accélération.
+Le système de ventilateur simple est composé de trois parties principales :
+1. Entrée
+Interrupteur / alimentation
+Permet d’allumer ou d’éteindre le système.
 2. Unité de traitement
-Arduino Nano
-Reçoit les données des capteurs, traite les informations et contrôle l’affichage.
-3. Sortie / Affichage
-Écran OLED SSD1306
-Affiche la fréquence cardiaque et les données de mouvement en temps réel.
-4. Alimentation
-Batterie Li-Po + Module TP4056
-Fournit une alimentation portable et permet la recharge de la batterie.
+Arduino UNO / Nano
+Contrôle le fonctionnement du moteur.
+3. Sortie
+Moteur DC avec hélice
+Fait tourner le ventilateur.
 
 ### Block diagram
 
@@ -50,26 +40,23 @@ schematicskicad_schematic.png.jpeg
 
 <!-- This is just an example, fill in with your actual components -->
 
-| device            | usage                            | Prix    |
-| ----------------- | -------------------------------- | ------- |
-| Arduino Nano      | Microcontrôleur principal        | ~60 RON |
-| OLED SSD1306      | Affichage des informations       | ~25 RON |
-| MPU6050           | Détection de mouvement           | ~20 RON |
-| Capteur de pouls  | Surveillance du rythme cardiaque | ~25 RON |
-| Batterie Li-Po    | Alimentation portable            | ~30 RON |
-| Module TP4056     | Charge de la batterie            | ~10 RON |
-| Breadboard        | Prototypage du circuit           | ~10 RON |
-| Fils de connexion | Connexions                       | ~7 RON  |
+| Device                     | Usage                     | Prix    |
+| -------------------------- | ------------------------- | ------- |
+| Arduino UNO/Nano           | Microcontrôleur principal | ~60 RON |
+| Moteur DC                  | Rotation du ventilateur   | ~20 RON |
+| Hélice                     | Ventilation               | ~10 RON |
+| Transistor                 | Contrôle du moteur        | ~5 RON  |
+| Breadboard                 | Prototypage du circuit    | ~10 RON |
+| Fils de connexion          | Connexions                | ~7 RON  |
+| Batterie / alimentation 5V | Alimentation              | ~20 RON |
+
 
 
 ### Libraries
-
-| library            | Usage                     | descripition                        |
-| ------------------ | ------------------------- | ---------------------------------- |
-| [Wire.h  ](https://www.arduino.cc/reference/en/language/functions/communication/wire/)           | Communication I2C Ar[duino | Communication avec OLED et MPU6050 |
-| Adafruit_GFX.h  ](https://github.com/adafruit/Adafruit-GFX-Library)    | Bibliothèque graphique    | Texte et graphiques sur écran      |
-| [Adafruit_SSD1306.h](https://github.com/adafruit/Adafruit_SSD1306) | Contrôle OLED             | Gestion de l’écran OLED            |
-| [MPU6050.h](https://github.com/adafruit/Adafruit_MPU6050)          | Capteur MPU6050           | Détection de mouvement             |
+| Library     | Usage                 | Description        |
+| ----------- | --------------------- | ------------------ |
+| Arduino IDE | Programmation Arduino | Contrôle du moteur |
+            |
 
 
 ## Log
